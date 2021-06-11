@@ -38,7 +38,7 @@ public class PersonConfig {
 		LocalSessionFactoryBean sessionFactory=new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
 		Properties properties=new Properties();
-		properties.setProperty("hibernateDialect", "org.hibernate.dialect.MySQL57Dialect");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
 		properties.setProperty("hibernate.show_sql","true");
 		properties.setProperty("hibernnate.hbm2ddl.auto", "update");
 		sessionFactory.setHibernateProperties(properties);
@@ -54,7 +54,7 @@ public class PersonConfig {
 		return hibernateTransactionManager;
 	}
 	
-	@Bean({"hibernateTemlate"})
+	@Bean({"hibernateTemplate"})
 	public HibernateTemplate getHibernateTemplate()
 	{
 		HibernateTemplate hibernateTemplate=new HibernateTemplate();
